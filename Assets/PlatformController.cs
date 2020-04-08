@@ -2,6 +2,7 @@
 
 public class PlatformController : MonoBehaviour
 {
+    private bool isQutting = false;
     private PlatformsManager platformsManager;
 
     /// <summary>
@@ -17,8 +18,16 @@ public class PlatformController : MonoBehaviour
     /// </summary>
     void OnBecameInvisible()
     {
-        if(platformsManager != null){
+        if(platformsManager != null && !isQutting){
             platformsManager.RecyclePlatform(this.gameObject);
         }
+    }
+    
+    /// <summary>
+    /// Callback sent to all game objects before the application is quit.
+    /// </summary>
+    void OnApplicationQuit()
+    {
+        isQutting = true;
     }
 }
