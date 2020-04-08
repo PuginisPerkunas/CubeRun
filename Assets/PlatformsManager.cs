@@ -14,7 +14,7 @@ public class PlatformsManager : MonoBehaviour
     private int zOffset = 0;
     private int platformsIndex = 0;
 
-    Dictionary<int, List<GameObject>> obsticlesForPlatform = new Dictionary<int, List<GameObject>>();
+    List<List<GameObject>> obsticlesForPlatform = new List<List<GameObject>>();
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class PlatformsManager : MonoBehaviour
 
     private void RemoveOldObsticles()
     {
-        List<GameObject> lastParticles = obsticlesForPlatform.Values.Last();
+        List<GameObject> lastParticles = obsticlesForPlatform.First();
         foreach (GameObject item in lastParticles)
         {
             Destroy(item);
@@ -54,10 +54,10 @@ public class PlatformsManager : MonoBehaviour
         for (int i = 0; i < obsticles.Length; i++)
         {
             Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(-10.0f, 10.0f), 2, positionOfPlatform.z);
-            var obsticle = Instantiate(obsticles[i], randomPosition, Quaternion.identity);
+            GameObject obsticle = Instantiate(obsticles[i], randomPosition, Quaternion.identity);
             listOfObsticlesOnPlatform.Add(obsticle);
         }
         Debug.Log("Size of obsticlesList: " + listOfObsticlesOnPlatform.Count.ToString());
-        obsticlesForPlatform.Add(platformsIndex,listOfObsticlesOnPlatform);
+        obsticlesForPlatform.Add(listOfObsticlesOnPlatform);
     }
 }
