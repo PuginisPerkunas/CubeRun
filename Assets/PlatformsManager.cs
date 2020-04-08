@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -12,7 +11,6 @@ public class PlatformsManager : MonoBehaviour
     [SerializeField]
     private int platformLenght = 50;
     private int zOffset = 0;
-    private int platformsIndex = 0;
 
     List<List<GameObject>> obsticlesForPlatform = new List<List<GameObject>>();
 
@@ -22,18 +20,16 @@ public class PlatformsManager : MonoBehaviour
 
         for (int i = 0; i < platforms.Length; i++)
         {
-            Vector3 positionOfPlatform = new Vector3(0,0, i * platformLenght);
-            Instantiate(platforms[i], positionOfPlatform, Quaternion.Euler(0,0,0));
-            platformsIndex = i;
+            Vector3 positionOfPlatform = new Vector3(0, 0, i * platformLenght);
+            Instantiate(platforms[i], positionOfPlatform, Quaternion.Euler(0, 0, 0));
             zOffset += 50;
             SpawnObsiclesOnPlatform(positionOfPlatform);
-        }    
+        }
     }
     internal void RecyclePlatform(GameObject platform)
     {
-        platform.transform.position = new Vector3(0,0, zOffset);
+        platform.transform.position = new Vector3(0, 0, zOffset);
         zOffset += platformLenght;
-        platformsIndex += 1;
         SpawnObsiclesOnPlatform(platform.transform.position);
         RemoveOldObsticles();
     }
@@ -45,6 +41,7 @@ public class PlatformsManager : MonoBehaviour
         {
             Destroy(item);
         }
+        obsticlesForPlatform.Remove(lastParticles);
     }
 
     private void SpawnObsiclesOnPlatform(Vector3 positionOfPlatform)
@@ -53,7 +50,11 @@ public class PlatformsManager : MonoBehaviour
 
         for (int i = 0; i < obsticles.Length; i++)
         {
-            Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(-10.0f, 10.0f), 2, positionOfPlatform.z);
+            Vector3 randomPosition = new Vector3(
+                x: Random.Range(-10.0f, 10.0f),
+                y: 2,
+                z: Random.Range(positionOfPlatform.z, positionOfPlatform.z + platformLenght)
+            );
             GameObject obsticle = Instantiate(obsticles[i], randomPosition, Quaternion.identity);
             listOfObsticlesOnPlatform.Add(obsticle);
         }
