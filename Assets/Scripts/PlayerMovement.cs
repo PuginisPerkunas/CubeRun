@@ -20,7 +20,8 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if(rb.position.y < minFallDetectionValue){
-            FindObjectOfType<GameManager>().EndGame();
+            //Todo uncomment when GameManager egsist in scene
+            //FindObjectOfType<GameManager>().EndGame();
         }
     }
 }

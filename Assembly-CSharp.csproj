@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\PlatformController.cs" />
+     <Compile Include="Assets\PlatformsManager.cs" />
      <Compile Include="Assets\Scripts\CreditsUiController.cs" />
      <Compile Include="Assets\Scripts\EndTrigger.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
