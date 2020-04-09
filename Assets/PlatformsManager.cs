@@ -53,7 +53,8 @@ public class PlatformsManager : MonoBehaviour
             Vector3 randomPosition = new Vector3(
                 x: Random.Range(-10.0f, 10.0f),
                 y: 2,
-                z: Random.Range(positionOfPlatform.z, positionOfPlatform.z + platformLenght)
+                //todo change hardcoded value to opsticle size
+                z: Random.Range(positionOfPlatform.z - 10, positionOfPlatform.z + platformLenght - 10)
             );
             GameObject obsticle = Instantiate(obsticles[i], randomPosition, Quaternion.identity);
             listOfObsticlesOnPlatform.Add(obsticle);
