@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Obsticle
   - player
+  - blueEnemy
+  - greenEnemy
+  - yellowEnemy
+  - redEnemy
   layers:
   - Default
   - TransparentFX
