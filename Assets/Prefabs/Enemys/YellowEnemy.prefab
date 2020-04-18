@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5878878537428267406}
   - component: {fileID: 5878878537428267407}
   - component: {fileID: 2286210470474442681}
+  - component: {fileID: 95753069}
   m_Layer: 0
   m_Name: YellowEnemy
   m_TagString: yellowEnemy
@@ -124,3 +125,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardMoveSpeed: 1000
+--- !u!114 &95753069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878878537428267392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df56f20d38f3444568361591a3f38841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
