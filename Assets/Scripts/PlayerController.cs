@@ -2,11 +2,11 @@
 
 public class PlayerController : MonoBehaviour
 {
-    private EnemyAndColor currentPlayerColor;
+    private EnemyData currentPlayerColor;
     [SerializeField]
     private MeshRenderer playerMeshRender;
     [SerializeField]
-    private EnemyAndColor[] allEnemysAndColors;
+    private EnemyData[] allEnemysData;
     void Start()
     {
         GameEvents.current.onPlayerDestroyRequred += PlayerDestroyRequred;
@@ -15,20 +15,20 @@ public class PlayerController : MonoBehaviour
 
     private void SetRandomPlayerColor()
     {
-        currentPlayerColor = allEnemysAndColors[UnityEngine.Random.Range(0, allEnemysAndColors.Length)];
+        currentPlayerColor = allEnemysData[UnityEngine.Random.Range(0, allEnemysData.Length)];
         playerMeshRender.material.color = currentPlayerColor.enemyColor;
     }
 
     private void OnCollisionEnter(Collision collision) {
         var coliderTag = collision.gameObject.tag;
-        if(coliderTag== currentPlayerColor.enemyData.enemyTag){
+        if(coliderTag== currentPlayerColor.enemyTag){
             var id = collision.gameObject.GetComponent<EnemyController>().GetId();
             GameEvents.current.EnemeyDestroyRequred(id);
             SetRandomPlayerColor();
         }else{
-            for (int i = 0; i < allEnemysAndColors.Length; i++)
+            for (int i = 0; i < allEnemysData.Length; i++)
             {
-                if(coliderTag == allEnemysAndColors[i].enemyData.enemyTag){
+                if(coliderTag == allEnemysData[i].enemyTag){
                     GameEvents.current.PlayerDestroyRequred();
                 }
             }
