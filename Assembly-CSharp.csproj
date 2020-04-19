@@ -79,11 +79,15 @@
      <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
+     <Compile Include="Assets\Scripts\AbstractionsAndHelpers\EnemyAndColor.cs" />
+     <Compile Include="Assets\Scripts\AbstractionsAndHelpers\EnemyData.cs" />
      <Compile Include="Assets\Scripts\AbstractionsAndHelpers\SingletonClassAbstractor.cs" />
      <Compile Include="Assets\Scripts\CreditsUiController.cs" />
      <Compile Include="Assets\Scripts\EndTrigger.cs" />
-     <Compile Include="Assets\Scripts\EnemyController.cs" />
-     <Compile Include="Assets\Scripts\EnemyWithColor.cs" />
+     <Compile Include="Assets\Scripts\EnemysScrips\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\EnemysScrips\EnemyDisplay.cs" />
+     <Compile Include="Assets\Scripts\EnemysScrips\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\EnemysScrips\EnemysDestroyerController.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\GameConstantsAndIds.cs" />
      <Compile Include="Assets\Scripts\GameEvents.cs" />

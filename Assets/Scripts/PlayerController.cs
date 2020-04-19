@@ -2,11 +2,11 @@
 
 public class PlayerController : MonoBehaviour
 {
-    private EnemyWithColor currentPlayerColor;
+    private EnemyAndColor currentPlayerColor;
     [SerializeField]
     private MeshRenderer playerMeshRender;
     [SerializeField]
-    private EnemyWithColor[] allEnemysAndColors;
+    private EnemyAndColor[] allEnemysAndColors;
     void Start()
     {
         GameEvents.current.onPlayerDestroyRequred += PlayerDestroyRequred;
@@ -21,14 +21,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) {
         var coliderTag = collision.gameObject.tag;
-        if(coliderTag== currentPlayerColor.enemyColorTag){
+        if(coliderTag== currentPlayerColor.enemyData.enemyTag){
             var id = collision.gameObject.GetComponent<EnemyController>().GetId();
             GameEvents.current.EnemeyDestroyRequred(id);
             SetRandomPlayerColor();
         }else{
             for (int i = 0; i < allEnemysAndColors.Length; i++)
             {
-                if(coliderTag == allEnemysAndColors[i].enemyColorTag){
+                if(coliderTag == allEnemysAndColors[i].enemyData.enemyTag){
                     GameEvents.current.PlayerDestroyRequred();
                 }
             }
