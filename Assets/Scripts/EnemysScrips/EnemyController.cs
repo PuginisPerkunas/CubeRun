@@ -32,4 +32,8 @@ public class EnemyController : MonoBehaviour
         GameEvents.current.onEnemyDestroyRequred -= OnDestroyRequred;
     }
 
+    private void OnBecameInvisible() {
+        Destroy(gameObject);
+    }
+
 }

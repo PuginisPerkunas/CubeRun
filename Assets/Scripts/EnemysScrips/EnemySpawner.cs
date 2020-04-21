@@ -20,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
             y: spawnPositionLocation.y,
             z: spawnPositionLocation.z
         );
+        //todo reikia sugalvoti kaip spawninti AI enemy 
         GameObject randomEnemy = enemysPrefabs[Random.Range(0, enemysPrefabs.Length)];
         var newGameObject = Instantiate(randomEnemy, spawnPosition, Quaternion.identity);
         EnemyData randomEnemyData = enemysData[Random.Range(0, enemysData.Length)];

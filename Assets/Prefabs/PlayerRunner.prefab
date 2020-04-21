@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 6453208082782060274}
   - component: {fileID: 6453208082782060278}
   - component: {fileID: 6453208082782060279}
-  m_Layer: 0
+  - component: {fileID: 144898789}
+  m_Layer: 10
   m_Name: PlayerRunner
   m_TagString: player
   m_Icon: {fileID: 0}
@@ -57,6 +58,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -68,6 +70,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -123,4 +126,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6453208082782060278}
   forwardMoveSpeed: 1000
-  sidesMoveSpeed: 100
+--- !u!114 &144898789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453208082782060273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0efc3df4a5341abb732c3c16a8a1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMeshRender: {fileID: 6453208082782060275}
+  allEnemysData:
+  - {fileID: 11400000, guid: 15837ec6a1c374caca9cc8807e9b3d64, type: 2}
+  - {fileID: 11400000, guid: 4b523c835937c4454ba15b62beba941c, type: 2}
+  - {fileID: 11400000, guid: 2f8a0f5bbff0b4450a74d23dec654af6, type: 2}
+  - {fileID: 11400000, guid: 9b003130f27024600b3b0fbfd9f5a286, type: 2}

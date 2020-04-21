@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8087388312230688165}
   - component: {fileID: 8087388312230688162}
   - component: {fileID: 8087388312230688163}
-  - component: {fileID: 8087388312230688160}
   - component: {fileID: 8087388312230688161}
   - component: {fileID: 1310378208885391190}
   - component: {fileID: 7573425091421052133}
   - component: {fileID: 925437244011820417}
+  - component: {fileID: 7253282576085941104}
   m_Layer: 0
   m_Name: ConeEnemy
   m_TagString: blueEnemy
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8087388312230688160
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8087388312230688174}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8087388312230688161
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,3 +137,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55432d4a420234aac95134cb7e41ef55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &7253282576085941104
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8087388312230688174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 6
+  m_Height: 15
+  m_Direction: 1
+  m_Center: {x: 0, y: 6, z: 0}

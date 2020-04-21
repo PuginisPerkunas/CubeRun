@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GreenEnemy
   m_EditorClassIdentifier: 
   enemyMaterial: {fileID: 2100000, guid: 83346bfe5a75b4a629deec8e0024939f, type: 2}
+  enemyColor: {r: 0, g: 0.7607843, b: 0.23529412, a: 0}
   enemyTag: greenEnemy
   enemyMoveSpeed: 1000
